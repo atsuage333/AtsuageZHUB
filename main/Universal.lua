@@ -7,36 +7,10 @@ local HomeTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-HomeTab:AddToggle({
-	Name = "Anti AFK",
-	Default = false,
+HomeTab:AddButton({
+	Name = "infinite yield",
 	Callback = function(Value)
-		local nearest = nil
-		local last = math.huge
-		for i,v in pairs(game.Players:GetPlayers()) do
-			if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character and v.Character and v.Character:FindFirstChild(trg_part) then
-				if game.Players.LocalPlayer.Character:FindFirstChild(trg_part) then
-					local ePos, vissss = workspace.CurrentCamera:WorldToViewportPoint(v.Character[trg_part].Position)
-					local AccPos = Vector2.new(ePos.x, ePos.y)
-					local mousePos = Vector2.new(workspace.CurrentCamera.ViewportSize.x / 2, workspace.CurrentCamera.ViewportSize.y / 2)
-					local distance = (AccPos - mousePos).magnitude
-					if distance < last and vissss and hotkey and distance < 400 then
-						last = distance
-						nearest = v
-					end
-				end
-			end
-		end
-		return nearest
-	end
-	
-	game:GetService("RunService").RenderStepped:Connect(function()
-		local closest = getClosestPlayerToCursor("Head")
-		if state and closest and closest.Character:FindFirstChild("Head") then
-			lookAt(Cam.CFrame.p, closest.Character:FindFirstChild("Head").Position)
-		end
-	end)
-end
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")))()
 	end    
 })
 
