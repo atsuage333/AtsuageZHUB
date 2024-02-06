@@ -86,7 +86,7 @@ CheckKeyCorner.CornerRadius = UDim.new(0, 5)
 CheckKeyCorner.Parent = CheckKey
 
 GetKey.MouseButton1Click:Connect(function()
-   setclipboard("Your Way How To Get The Key")
+   setclipboard("https://link-hub.net/1110853/atsuagezhub-key-roblox")
 end)
 
 local function validateKey(key)
