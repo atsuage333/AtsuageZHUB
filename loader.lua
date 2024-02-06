@@ -102,7 +102,7 @@ CheckKey.MouseButton1Click:Connect(function()
         ScreenGui:Destroy()
 
 -- Put Your Script Here
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/atsuage333/AtsuageZHUB/loader.lua")))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/atsuage333/AtsuageZHUB/main/loader.lua")))()
 
     else
         TextBox.PlaceholderText = "Invalid key. Try again."
