@@ -40,79 +40,19 @@ local CombatTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-HomeTab:AddToggle({
-	Name = "Hitbox",
-	Default = false,
+CombatTab:AddButton({
+	Name = "Aimbot GUI",
 	Callback = function(Value)
-		_G.HeadSize = 40
-
-		_G.Disabled = true
-		
-		 
-		
-		game:GetService('RunService').RenderStepped:connect(function()
-		
-		if _G.Disabled then
-		
-		for i,v in next, game:GetService('Players'):GetPlayers() do
-		
-		if v.Name ~= game:GetService('Players').LocalPlayer.Name then
-		
-		pcall(function()
-		
-		v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
-		
-		v.Character.HumanoidRootPart.Transparency = 0.7
-		
-		v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
-		
-		v.Character.HumanoidRootPart.Material = "Neon"
-		
-		v.Character.HumanoidRootPart.CanCollide = false
-		
-		end)
-		
-		end
-		
-		end
-		
-		end
-		
-		end	
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20Aimbot.lua")))()
 	end    
 })
 
-local PlayerTab = Window:MakeTab({
-	Name = "Player",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
 
-PlayerTab:AddSlider({
-	Name = "Walkspeed",
-	Min = 20,
-	Max = 1000,
-	Default = 20,
-	Color = Color3.fromRGB(140, 185, 255),
-	Increment = 1,
-	ValueName = "WS",
+CombatTab:AddDropdown({
+	Name = "Aim part",
+	Default = "",
+	Options = {"Head", "Torso"},
 	Callback = function(Value)
-		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-Walkspeed = Value
-	end    
-})
-
-PlayerTab:AddToggle({
-	Name = "Keep Walkspeed",
-	Default = false,
-	Callback = function(Value)
-KeepWalkspeed = Value
-            while KeepWalkspeed do
-                if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= Walkspeed then
-                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Walkspeed
-                end
-task.wait()
-            end
 	end    
 })
 
