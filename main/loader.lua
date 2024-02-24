@@ -8,8 +8,6 @@ elseif  game.PlaceId == 16034567693 then
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/atsuage333/slapBattlesGUI2.0/main/elude.lua")))()
     elseif  game.PlaceId == 14422118326 then
   loadstring(game:HttpGet(("https://raw.githubusercontent.com/atsuage333/slapBattlesGUI2.0/main/null.lua")))()
-    elseif game.PlaceId == 6839171747 and game.ReplicatedStorage.GameData.Floor.Value ~= "Rooms"then
-      loadstring(game:HttpGet(("https://raw.githubusercontent.com/atsuage333/AtsuageZHUB/main/main/doors/rooms.lua")))()
     elseif game.PlaceId == 6839171747 then
       loadstring(game:HttpGet(("https://raw.githubusercontent.com/atsuage333/AtsuageZHUB/main/main/doors/doors.lua")))()
     else
